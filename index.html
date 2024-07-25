@@ -10,14 +10,14 @@
 			keyVal= v.split('=');
             if(keyVal[0] == 'auth_code'){
            		 authCode = keyVal[1];
-            }else  if(keyVal[0] == 'status'){
+            }else  if(keyVal[0] == 'state'){
            		 statusString = keyVal[1];
             }
 			
 	})
          
-        document.writeln("Authcode is "+authCode);
-         document.writeln("Status String  "+statusString);
+        document.writeln("<table><tr><td>Authcode:</td><td>"+authCode+"</td></tr>");
+         document.writeln("<tr><td>State String:</td><td>"+statusString+"</td></tr></table>");
         
       }
     </script>
