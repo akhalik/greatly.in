@@ -2,9 +2,22 @@
   <head>
     <script>
       function displayAuthCode(){
-        var url = new URL(location.href)
-          var authCode = url.searchParams.get('auth_code')
-        document.write("Your authcode is "+authCode);
+      
+       const queryString = window.location.search.substring(1);
+       var authCode = '';
+      var statusString = '';
+      queryString.split('&').forEach((v,i, a)=>{
+			keyVal= v.split('=');
+            if(keyVal[0] == 'auth_code'){
+           		 authCode = keyVal[1];
+            }else  if(keyVal[0] == 'status'){
+           		 statusString = keyVal[1];
+            }
+			
+	})
+         
+        document.writeln("Authcode is "+authCode);
+         document.writeln("Status String  "+statusString);
         
       }
     </script>
