@@ -2,7 +2,9 @@
   <head>
     <script>
       function displayAuthCode(){
-        document.write("Your authcode is "+document.location);
+        var url = new URL(location.href)
+          var authCode = url.searchParams.get('auth_code')
+        document.write("Your authcode is "+authCode);
         
       }
     </script>
